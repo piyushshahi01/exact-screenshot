@@ -147,7 +147,7 @@ export function Gallery({ onOpen }: { onOpen: (i: number) => void }) {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, delay: (i % 3) * 0.1 }}
             whileHover={{ rotate: 0, scale: 1.03 }}
-            style={{ rotate: tilts[i % tilts.length] }}
+            style={{ rotate: tilts[i % tilts.length] ?? 0 }}
             className="mx-auto mb-10 max-w-xs cursor-pointer break-inside-avoid bg-paper p-3 pb-4 shadow-soft"
             onClick={() => onOpen(i)}
           >
@@ -292,8 +292,8 @@ export function Lightbox({ index, setIndex }: { index: number | null; setIndex: 
             className="max-h-[85vh] w-full max-w-md bg-paper p-3 pb-5 shadow-glow"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="max-h-[70vh] overflow-hidden"><PhotoImg photo={love.photos[index]} className="max-h-[70vh] object-contain" /></div>
-            <figcaption className="mt-3 text-center font-script text-3xl text-burgundy">{love.photos[index].caption}</figcaption>
+            <div className="max-h-[70vh] overflow-hidden"><PhotoImg photo={love.photos[index]!} className="max-h-[70vh] object-contain" /></div>
+            <figcaption className="mt-3 text-center font-script text-3xl text-burgundy">{love.photos[index]?.caption}</figcaption>
           </motion.figure>
           <button aria-label="Close" onClick={() => setIndex(null)} className="absolute top-4 right-4 rounded-full bg-ivory/90 p-2 text-burgundy"><X className="h-5 w-5" /></button>
           <button aria-label="Previous" onClick={(e) => { e.stopPropagation(); setIndex((index - 1 + n) % n); }} className="absolute left-3 rounded-full bg-ivory/90 p-2 text-burgundy"><ChevronLeft className="h-5 w-5" /></button>
