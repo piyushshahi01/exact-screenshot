@@ -1,29 +1,17 @@
-# Welcome to your Lovable project
+# A love letter, made for her
 
-This project was built with [Lovable](https://lovable.dev).
+Everything personal lives in **`src/love.config.ts`** — her name, every letter, captions, notes, button text, photos and music.
 
-## Build with Lovable
+## Replace the photos
+1. Put her photos in `public/photos/` (e.g. `1.jpg`, `2.jpg`).
+2. In `src/love.config.ts`, set each `src`, e.g. `src: "/photos/1.jpg"`. Photos keep their original shape.
+3. Add or remove entries to show more or fewer photos. Empty `src` shows a soft placeholder.
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+## Change the words
+Edit any text in `src/love.config.ts` (apology, captions, notes, final letter, final buttons).
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+## Add music (optional)
+Place a royalty-free track at `public/music/love.mp3`. A small music button appears bottom-right; it never plays until clicked. No file = no button, site works the same.
 
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+## Deploy
+Click **Publish** in Lovable. The page is marked `noindex` so search engines don't list it.
